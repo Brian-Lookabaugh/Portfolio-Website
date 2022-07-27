@@ -1,6 +1,6 @@
 ## About Me
 
-## Project 1: Building a Conflict Recurrence Data Set with Stata
+## [Project 1: Building a Conflict Recurrence Data Set with Stata]()
 
 ## Project 2: Predicting When NGOs Contribute to Post-Conflict Violence with R
 
