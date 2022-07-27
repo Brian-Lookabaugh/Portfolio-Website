@@ -1,7 +1,3 @@
----
-title: Brian Lookabaugh
----
-
 ## About Me
 
 ## [Project 1: Building a Conflict Recurrence Data Set with Stata]()
