@@ -26,7 +26,7 @@ Email: brian.lookabaughjr@gmail.com <br>
 - Describe this Project
 
 ## Helpful Data Science Materials
-### The Following Projects Are Under Construction <br>
+### The Following Projects Are in Development <br>
 R Data Management Guide <br>
 R Data Visualization Guide <br>
 Python Data Management Guide <br>
