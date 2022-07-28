@@ -11,16 +11,16 @@
 - Describe this Project
 
 ## Project 2: Predicting When NGOs Contribute to Post-Conflict Violence with R
+- This Project is Not Currently Completed
 - Describe this Project
-- Project Under Construction
 
 ## Project 3: Assessing the Effectiveness of NGO Peacebuilding Efforts with Python
+- This Project is Not Currently Completed
 - Describe this Project
-- Project Under Construction
 
-## Project 4: Social Network Analysis of Internatioanl Rebel Group Ties with R
+## Project 4: Social Network Analysis of International Rebel Group Ties with R
+- This Project is Not Currently Completed
 - Describe this Project
-- Project Under Construction
 
 ## Helpful Data Science Materials
 ### The Following Projects Are Under Construction
