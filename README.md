@@ -17,7 +17,7 @@ Many scholars and policymakers have argued that non-state actors (such as advoca
 
 ## Project 3: Assessing the Effectiveness of Non-State Actor Peacebuilding Efforts with Python
 ### This Project is Currently in Development
-While our understanding on the potential negative effects of non-state actors is not clear, our knowledge on *how* non-state actors theoretically contribute to post-conflict peace is also limimted. Because non-state actors have been linked to numerous types of peacebuilding efforts, this project analyzes how consequential these actors are towards various types of peacebuilding activities. 
+While our understanding on the potential negative effects of non-state actors for post-conflict peace is not clear, our knowledge on *how* non-state actors theoretically contribute to post-conflict peace is also limimted. Because non-state actors have been linked to numerous types of peacebuilding efforts, this project analyzes how consequential these actors are towards various types of peacebuilding activities. 
 - Insert Image
 
 ## Project 4: Social Network Analysis of International Rebel Group Ties with R
