@@ -18,7 +18,7 @@
 - Describe this Project
 - Project Under Construction
 
-## Project 4: Social Network Analysis of Spoiler Rebel Groups with R
+## Project 4: Social Network Analysis of Internatioanl Rebel Group Ties with R
 - Describe this Project
 - Project Under Construction
 
