@@ -1,8 +1,7 @@
 # Brian Lookabaugh
 
 ## About Me
-![image](https://user-images.githubusercontent.com/109555700/181590791-e39df40b-0c11-41d5-a16b-206de3c461fc.png){ length=50% }
-- Note: Insert Picture
+![image](https://user-images.githubusercontent.com/109555700/181590791-e39df40b-0c11-41d5-a16b-206de3c461fc.png){:height="36px" width="36px"}
 - Note: Insert Bio
 - Email: brian.lookabaughjr@gmail.com
 - [LinkedIn](https://www.linkedin.com/in/brian-lookabaugh-372ab31a1/)
