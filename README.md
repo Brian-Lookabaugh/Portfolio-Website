@@ -15,10 +15,10 @@ Conflict recurrence, the phenomenon where countries who have recently resolved c
 Many scholars and policymakers have argued that non-state actors (such as advocacy groups, religious organizations, civil society, etc.) have an important role in the peacebuilding process for post-conflict countries. However, while still a minority, an alternative set of individuals have argued that non-state actors may have a "darker side" which may translate to higher rates of post-conflict violence and a higher probability of conflict recurrence. This project seeks to quantitatively assess these arguments. Using survival analysis, this project investigates the conditionalities that make non-state actors, in particular, civil society, more prone to violence than peace. <br> 
 - Insert Image
 
-## Project 3: Assessing the Effectiveness of NGO Peacebuilding Efforts with Python
+## Project 3: Assessing the Effectiveness of Non-State Actor Peacebuilding Efforts with Python
 ### This Project is Currently in Development
+While our understanding on the potential negative effects of non-state actors is not clear, our knowledge on *how* non-state actors theoretically contribute to post-conflict peace is also limimted. Because non-state actors have been linked to numerous types of peacebuilding efforts, this project analyzes how consequential these actors are towards various types of peacebuilding activities. 
 - Insert Image
-- Describe this Project
 
 ## Project 4: Social Network Analysis of International Rebel Group Ties with R
 ### This Project is Currently in Development
@@ -27,8 +27,8 @@ Many scholars and policymakers have argued that non-state actors (such as advoca
 
 ## Helpful Data Science Materials
 ### The Following Projects Are in Development
-R Data Management Guide <br>
+R Data Manipulation Guide <br>
 R Data Visualization Guide <br>
-Python Data Management Guide <br>
+Python Data Manipulation Guide <br>
 Python Data Visualization Guide <br>
 Timeline of a Data Science Project
