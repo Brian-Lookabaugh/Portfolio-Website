@@ -1,10 +1,4 @@
----
-title: "Title Strip Test Post"
----
-
-# Title Override
-
-# Brian Lookabaugh
+# Brian Lookabaugh's Portfolio Website
 
 ## About Me
 
