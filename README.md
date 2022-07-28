@@ -8,7 +8,7 @@
 - [LinkedIn](https://www.linkedin.com/in/brian-lookabaugh-372ab31a1/)
 - Note: Attach Resume
 
-## [Project 1: Building a Conflict Recurrence Data Set with Stata](file:///C:/Users/brian/Desktop/Dissertation%20&%20Projects/Paper%201/Paper%201%20Data%20Files/BuildingConflictRecurrenceDataset.html)
+## [Project 1: Building a Conflict Recurrence Data Set with Stata](https://github.com/Brian-Lookabaugh/Conflict-Recurrence-Dataset-Construction-Chapter1-Dissertation/blob/main/index.html)
 
 ## Project 2: Predicting When NGOs Contribute to Post-Conflict Violence with R
 - Project Under Construction
