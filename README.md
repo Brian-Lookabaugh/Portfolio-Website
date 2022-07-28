@@ -9,14 +9,18 @@
 - Note: Attach Resume
 
 ## [Project 1: Building a Conflict Recurrence Data Set with Stata](https://rawgit.com/Brian-Lookabaugh/Conflict-Recurrence-Dataset-Construction-Chapter1-Dissertation/main/index.html)
+- Describe this Project
 
 ## Project 2: Predicting When NGOs Contribute to Post-Conflict Violence with R
+- Describe this Project
 - Project Under Construction
 
 ## Project 3: Assessing the Effectiveness of NGO Peacebuilding Efforts with Python
+- Describe this Project
 - Project Under Construction
 
 ## Project 4: Social Network Analysis of Spoiler Rebel Groups with R
+- Describe this Project
 - Project Under Construction
 
 ## Helpful Data Science Materials
