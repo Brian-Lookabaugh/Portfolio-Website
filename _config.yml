@@ -2,3 +2,10 @@ theme: jekyll-theme-cayman
 
 github:
   is_project_page: false
+
+defaults:
+  - scope:
+      path: some-path
+      layout: some_layout
+    values:
+      strip_title: true
