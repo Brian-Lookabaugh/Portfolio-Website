@@ -1,3 +1,9 @@
+---
+title: "Title Strip Test Post"
+---
+
+# Title Override
+
 # Brian Lookabaugh
 
 ## About Me
