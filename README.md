@@ -5,7 +5,6 @@
 - Note: Insert Bio
 - Email: brian.lookabaughjr@gmail.com
 - [LinkedIn](https://www.linkedin.com/in/brian-lookabaugh-372ab31a1/)
-- Note: Attach Resume
 
 ## [Project 1: Building a Conflict Recurrence Data Set with Stata](https://htmlpreview.github.io/?https://github.com/Brian-Lookabaugh/Conflict-Recurrence-Dataset-Construction-Chapter1-Dissertation/blob/main/BuildingConflictRecurrenceDataset.html)
 - Describe this Project
