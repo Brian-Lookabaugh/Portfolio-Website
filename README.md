@@ -10,10 +10,10 @@ Email: brian.lookabaughjr@gmail.com <br>
 ## [Project 1: Building a Conflict Recurrence Data Set with Stata](https://htmlpreview.github.io/?https://github.com/Brian-Lookabaugh/Conflict-Recurrence-Dataset-Construction-Chapter1-Dissertation/blob/main/BuildingConflictRecurrenceDataset.html) <br>
 Conflict recurrence, the phenomenon where countries who have recently resolved civil wars subsequently return to civil war, is a major sub-field in the civil war and conflict management literatures. Despite this prominence, data sets on conflict *recurrence* specifically are not readily avaliable. Contemporary data sets often include information on conflict itself. However, such data sets provide the inverse information that is needed for the study of conflict recurrence given that this area of research studies peace-year observations, rather than conflict-year observations. Still, information on prior conflicts is crucial to the study of conflict recurrence given that many of the strongest predictors of conflict recurrence are features of prior civil wars. These issues only partially reflect the many obstacles facing researchers who seek to quantitatively analyze covariates of conflict recurrence. In order to assist these researchers, this project walks through the construction of a conflict recurrence data set aggregated at the country-year level.
 
-## Project 2: Predicting When NGOs Contribute to Post-Conflict Violence with R
+## Project 2: Predicting When Non-State Actors Contribute to Post-Conflict Violence with R
 - This Project is Not Currently Completed
-- Insert Image
-- Describe this Project
+- Insert Image <br>
+Many scholars and policymakers have argued that non-state actors (such as advocacy groups, religious organizations, civil society, etc.) have an important role in the peacebuilding process for post-conflict countries. However, while still a minority, an alternative set of individuals have argued that non-state actors may have a "darker side" which may translate to higher rates of post-conflict violence and a higher probability of conflict recurrence. This project seeks to quantitatively assess these arguments. Using survival analysis, this project investigates the conditionalities that make non-state actors, in particular, civil society, more prone to violence than peace. 
 
 ## Project 3: Assessing the Effectiveness of NGO Peacebuilding Efforts with Python
 - This Project is Not Currently Completed
