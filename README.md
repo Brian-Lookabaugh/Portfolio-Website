@@ -3,7 +3,6 @@
 ## About Me
 - Note: Insert Picture
 - Note: Insert Bio
-- Note: Explain Contents of Website
 - Email: brian.lookabaughjr@gmail.com
 - [LinkedIn](https://www.linkedin.com/in/brian-lookabaugh-372ab31a1/)
 - Note: Attach Resume
