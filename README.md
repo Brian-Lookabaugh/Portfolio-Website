@@ -12,14 +12,17 @@ Email: brian.lookabaughjr@gmail.com <br>
 
 ## Project 2: Predicting When NGOs Contribute to Post-Conflict Violence with R
 - This Project is Not Currently Completed
+- Insert Image
 - Describe this Project
 
 ## Project 3: Assessing the Effectiveness of NGO Peacebuilding Efforts with Python
 - This Project is Not Currently Completed
+- Insert Image
 - Describe this Project
 
 ## Project 4: Social Network Analysis of International Rebel Group Ties with R
 - This Project is Not Currently Completed
+- Insert Image
 - Describe this Project
 
 ## Helpful Data Science Materials
