@@ -1,4 +1,4 @@
-# Brian Lookabaugh's Portfolio Website
+# Brian Lookabaugh
 
 ## About Me
 
