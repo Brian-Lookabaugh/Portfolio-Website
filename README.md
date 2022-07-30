@@ -31,4 +31,5 @@ R Data Manipulation Guide <br>
 R Data Visualization Guide <br>
 Python Data Manipulation Guide <br>
 Python Data Visualization Guide <br>
-Timeline of a Data Science Project
+Timeline of a Data Science Project <br>
+What Does a Data Scientist Do?
