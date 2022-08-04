@@ -398,7 +398,8 @@ following format, which does the same thing as the code above:</p>
 <h1>Importing and Merging Data</h1>
 <p>Now, we are going to import data from an Excel spreadsheet into
 RStudio:</p>
-<pre class="r"><code>VDEM_data &lt;- read_excel(&quot;C:/Users/brian/Desktop/Dissertation &amp; Projects/Data/VDEM Example Data.xlsx&quot;)</code></pre>
+<pre class="r"><code>VDEM_data &lt;- read_excel(
+  &quot;C:/Users/brian/Desktop/Dissertation &amp; Projects/Data/VDEM Example Data.xlsx&quot;)</code></pre>
 <p>This snippet of the very large and comprehensive Varieties of
 Democracy (V-Dem) data set includes information on civil society
 strength, GDP per capita, oil and natural gas income, and regime types
@@ -409,12 +410,13 @@ Luckily, I do have access to this information in another Excel
 spreadsheet. However, if I want information from both of these data sets
 together, I will need to merge the two data sets. I can do this with the
 following code. First, we need to load the trade data itself:</p>
-<pre class="r"><code>trade_data &lt;- read_excel(&quot;C:/Users/brian/Desktop/Grad School/Data2/Data/Raw Spreadsheet Data/COW_Trade.xlsx&quot;)</code></pre>
+<pre class="r"><code>trade_data &lt;- read_excel(
+  &quot;C:/Users/brian/Desktop/Grad School/Data2/Data/Raw Spreadsheet Data/COW_Trade.xlsx&quot;)</code></pre>
 <p>Next, we’ll need to actually <em>merge</em> these data sets. While
 you can do this with base R syntax, we are going to use the dplyr
 method, which uses SQL syntax to join data sets together. For the
 purposes of this example, we are going to be using an INNER JOIN
-function. What this means is that the final data set will only contain rows that
+function. What this means is that the final data set will only rows that
 matched for both data sets. If you find yourself in a situation where
 you need less restrictive criteria, you can explore LEFT JOINs, RIGHT
 JOINs and OUTER JOINs. OUTER JOINs are the exact opposite of INNER JOINs
@@ -548,11 +550,14 @@ the same thing:</p>
 “True or False” statements that we may want to apply to a newly
 generated variable. For example, maybe we would like a dummy variable
 that takes a value of “1” if a country has the highest civil society
-score in a given year. We can do this with the following code:</p>
+score in a given year. We can do this with the following code. Note that
+it is best practice to <code>ungroup()</code> after using
+<code>group_by</code>:</p>
 <pre class="r"><code>merged_data &lt;- merged_data %&gt;%
   group_by(year) %&gt;%
   mutate(biggest_CSO = 
-    if_else(v2xcs_ccsi == max(v2xcs_ccsi), 1, 0))</code></pre>
+    if_else(v2xcs_ccsi == max(v2xcs_ccsi), 1, 0)) %&gt;%
+  ungroup()</code></pre>
 <p>Alternatively, if we modify the <code>group_by</code> command to
 grouping by country instead of year, we can get a variable that let’s us
 know the year(s) with the highest civil society score for each
@@ -560,7 +565,8 @@ individual country:</p>
 <pre class="r"><code>merged_data &lt;- merged_data %&gt;%
   group_by(ccode) %&gt;%
   mutate(biggest_CSO2 = 
-    if_else(v2xcs_ccsi == max(v2xcs_ccsi), 1, 0))</code></pre>
+    if_else(v2xcs_ccsi == max(v2xcs_ccsi), 1, 0)) %&gt;%
+  ungroup()</code></pre>
 </div>
 <div id="creating-an-ordinal-variable" class="section level3">
 <h3>Creating an Ordinal Variable</h3>
@@ -643,13 +649,13 @@ countries:</p>
 <pre class="r"><code>merged_data &lt;- merged_data %&gt;%
   group_by(ccode) %&gt;%
   mutate(
-    lag_democ = lag(democracy, n = 1, order_by = ccode)
-  )</code></pre>
+    lag_democ = lag(democracy, n = 1, order_by = ccode)) %&gt;%
+  ungroup()</code></pre>
 <pre class="r"><code>merged_data &lt;- merged_data %&gt;%
   group_by(ccode) %&gt;%
   mutate(
-    lead_democ = lead(democracy, n = 1, order_by = ccode)
-  )</code></pre>
+    lead_democ = lead(democracy, n = 1, order_by = ccode)) %&gt;%
+  ungroup()</code></pre>
 </div>
 <div id="creating-a-count-variable" class="section level3">
 <h3>Creating a Count Variable</h3>
@@ -659,12 +665,14 @@ years that a country has been in this data set. To do this, I can
 execute the following:</p>
 <pre class="r"><code>merged_data &lt;- merged_data %&gt;%
   group_by(ccode) %&gt;%
-  mutate(year_count = row_number())</code></pre>
+  mutate(year_count = row_number()) %&gt;%
+  ungroup()</code></pre>
 <p>Alternatively, I may want this variable to simply serve as a summary
 as the total years a country spent in my data set:</p>
 <pre class="r"><code>merged_data &lt;- merged_data %&gt;%
   group_by(ccode) %&gt;%
-  mutate(total_years = max(year_count))</code></pre>
+  mutate(total_years = max(year_count)) %&gt;%
+  ungroup()</code></pre>
 </div>
 </div>
 <div id="sorting-data" class="section level1">
