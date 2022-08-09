@@ -416,7 +416,7 @@ following code. First, we need to load the trade data itself:</p>
 you can do this with base R syntax, we are going to use the dplyr
 method, which uses SQL syntax to join data sets together. For the
 purposes of this example, we are going to be using an INNER JOIN
-function. What this means is that the final data set will only rows that
+function. What this means is that the final data set will only include rows that
 matched for both data sets. If you find yourself in a situation where
 you need less restrictive criteria, you can explore LEFT JOINs, RIGHT
 JOINs and OUTER JOINs. OUTER JOINs are the exact opposite of INNER JOINs
@@ -559,7 +559,7 @@ it is best practice to <code>ungroup()</code> after using
     if_else(v2xcs_ccsi == max(v2xcs_ccsi), 1, 0)) %&gt;%
   ungroup()</code></pre>
 <p>Alternatively, if we modify the <code>group_by</code> command to
-grouping by country instead of year, we can get a variable that let’s us
+grouping by country instead of year, we can get a variable that lets us
 know the year(s) with the highest civil society score for each
 individual country:</p>
 <pre class="r"><code>merged_data &lt;- merged_data %&gt;%
