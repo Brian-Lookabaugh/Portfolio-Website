@@ -9,8 +9,7 @@ brianlookabaughjr@gmail.com <br>
 [Resume](https://github.com/Brian-Lookabaugh/Portfolio-Website/blob/main/Lookabaugh-Resume-8-22.pdf)
 
 ## [Project 1: Building a Conflict Recurrence Data Set](https://htmlpreview.github.io/?https://github.com/Brian-Lookabaugh/Portfolio-Website/blob/main/BuildingConflictRecurrenceDataset.html) <br>
-**Objective**: The goal of this project was to construct a national-level conflict recurrence data set. This was a particular challenge given that contemporary civil war data sets are aggregated at a sub-national level (warring party dyads). Further, information concerning prior civil wars is also needed while *only including* post-conflict observations. To study conflict recurrence, a data set is needed that transforms the format of contemporary civil war data sets. <br>
-**Data Sets Used**: Uppsala Conflict Data Program (UCDP) sources, Mullenbach Peacekeeping Operations data, Varieties of Democracy (V-Dem), Social Conflict in Africa (SCAD), Drazanova Ethnic Fractionalization data. <br> 
+**Objective**: The goal of this project was to construct a national-level conflict recurrence data set. This was a particular challenge given that contemporary civil war data sets are aggregated at a sub-national level (warring party dyads). Further, information concerning prior civil wars is also needed while *only including* post-conflict observations. To study conflict recurrence, a data set is needed that transforms the format of contemporary civil war data sets. <br> 
 **Program Used**: Stata <br>
 **Results**: The complete construction of a conflict recurrence data set aggregated at the country-year level. In addition, common covariates of civil war recurrence are included, containing information both about the *prior* civil war and about the *current* post-war environment.
 
