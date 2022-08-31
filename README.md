@@ -6,7 +6,7 @@ My name is Brian Lookabaugh and I have a passion for uncovering patterns and lea
 
 brianlookabaughjr@gmail.com <br>
 [LinkedIn](https://www.linkedin.com/in/brian-lookabaugh-372ab31a1/) <br>
-[Resume](https://github.com/Brian-Lookabaugh/Portfolio-Website/blob/main/Lookabaugh-Resume-8-18.pdf)
+[Resume](https://github.com/Brian-Lookabaugh/Portfolio-Website/blob/main/Lookabaugh-Resume-8-31.pdf)
 
 ## [Project 1: Building a Conflict Recurrence Data Set](https://htmlpreview.github.io/?https://github.com/Brian-Lookabaugh/Portfolio-Website/blob/main/BuildingConflictRecurrenceDataset.html) <br>
 **Objective**: The goal of this project was to construct a national-level conflict recurrence data set. This was a particular challenge given that contemporary civil war data sets are aggregated at a sub-national level (warring party dyads). Further, information concerning prior civil wars is also needed while *only including* post-conflict observations. To study conflict recurrence, a data set is needed that transforms the format of contemporary civil war data sets. <br> 
