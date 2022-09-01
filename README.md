@@ -17,6 +17,6 @@ brianlookabaughjr@gmail.com <br>
 [Guide to Data Manipulation in R](https://htmlpreview.github.io/?https://github.com/Brian-Lookabaugh/Portfolio-Website/blob/main/DataManipulation-R.html) <br>
 [Guide to Data Visualization in R](https://htmlpreview.github.io/?https://github.com/Brian-Lookabaugh/Portfolio-Website/blob/main/DataVisualization-R.html) <br>
 
-[Guide to Data Manipulation in Python](https://htmlpreview.github.io/?https://github.com/Brian-Lookabaugh/Portfolio-Website/blob/main/DataManipulation-Python.html)
+[Guide to Data Manipulation in Python](https://htmlpreview.github.io/?https://github.com/Brian-Lookabaugh/Portfolio-Website/blob/main/DataManipulation-Python.html) <br>
 
 [What Does a Data Scientist Do?](https://htmlpreview.github.io/?https://github.com/Brian-Lookabaugh/Portfolio-Website/blob/main/WhatDoesADataScientistDo.html)
