@@ -1,0 +1,301 @@
+---
+title: "Guide to Data Manipulation in Python"
+author: Brian Lookabaugh
+output: html_document
+---
+
+Python has established itself as the dominant programming language in all data-related fields. As a result, it is important to have, at the very least, a baseline understanding of common data manipulation tasks that will likely come up on the job. This page serves as a review, both for myself and for those transitioning from other programming languages (R, in particular) to Python.
+
+An additional note for R users in particular: this entire document was executed and rendered in RStudio. Setting up Python in RStudio is relatively simple. You simply need to download Python, install the "reticulate" package `install.packages("reticulate")`, and load the reticulate package `library(reticulate)`. After this, you can run Python code chunks from RMarkdown or, if you want to manually convert your console from R to Python, run `reticulate::repl_python()`. Once this is completed, you will be able to run Python code in R. Python's equivalent to R's `install.packages()` is `pip install` or `conda install`. In R, if you would like to install a Python package, you would run `py_install("library")` alternatively. For example, to install the pandas library, you would run `py_install("pandas")` rather than `pip install pandas`.
+
+```{r message=FALSE, warning=FALSE, include=FALSE}
+library(reticulate)
+```
+
+# Loading Essential Libraries
+
+```{python message=FALSE, warning=FALSE}
+import numpy as np # Scientific Computing
+import pandas as pd # Working With Tabular Data Manipulation
+```
+
+# Importing and Merging Data
+
+Now, we are going to import data from an Excel spreadsheet using Python:
+
+```{python message=FALSE, warning=FALSE}
+VDEM_data = pd.read_excel('C:/Users/brian/Desktop/Dissertation & Projects/Data/VDEM Example Data.xlsx')
+```
+
+This snippet of the very large and comprehensive Varieties of Democracy (V-Dem) data set includes information on civil society strength, GDP per capita, oil and natural gas income, and regime types of over 100 countries ranging from the late 1700s to the present. However, say that we also want information on international trade in our final data set. This information was not included in this particular data set. Luckily, we do have access to such information in another Excel spreadsheet. However, if we want information from both of these data sets together, we will need to merge the two data sets. We can do this with the following code. First, we need to load the trade data itself:
+
+```{python message=FALSE, warning=FALSE}
+trade_data = pd.read_excel('C:/Users/brian/Desktop/Grad School/Data2/Data/Raw Spreadsheet Data/COW_Trade.xlsx')
+```
+
+Next, we'll need to actually merge these data sets. Pandas, like dplyr, operates off of SQL's JOIN logic. If you are unfamiliar with this syntax, please visit my [Guide to Data Manipulation in R](https://htmlpreview.github.io/?https://github.com/Brian-Lookabaugh/Portfolio-Website/blob/main/DataManipulation-R.html) page.
+
+```{python message=FALSE, warning=FALSE}
+merged_data = pd.merge(
+  VDEM_data, trade_data, 
+  how = "inner", 
+  on = ["ccode", "year"]
+)
+```
+
+So, what did we actually do here? For one, we now have a data set that has all of the information from both the VDEM and the trade data sets together into one composite data set. However, how would we merge the data together if our ID variables were not named the same thing? To demonstrate how to resolve this issue, let's rename this country code variable in one of the data sets:
+
+```{python message=FALSE, warning=FALSE}
+trade_data = trade_data.rename(
+  columns = {'ccode' : 'country_code'}
+)
+```
+
+Okay, now let's see how we would merge these data sets together with different names for the country ID variable:
+
+```{python message=FALSE, warning=FALSE}
+merged_data = pd.merge(
+  VDEM_data, trade_data,
+  how = "inner",
+  left_on = ["ccode", "year"],
+  right_on = ["country_code", "year"]
+)
+```
+
+There we go! Now we know how to merge data sets where the ID variable that is being merged on has different names.
+
+# Keeping/Dropping Information
+
+When acquiring a data set, we are often given additional data that is not necessarily needed. Below, syntax is provided for keeping/dropping columns (variables), keeping/dropping rows (observations) and dealing with duplicate values.
+
+Keeping columns is useful when we do not need the majority of columns in our data set. In contrast, we may want to drop columns instead if you need most of the columns in the data set, but just need to select a couple/few columns. The first chunk of code is creating a new data set (aka "data frame") that is keeping only the country code, year, GDP per capita, and imports columns. The second chunk of code is deleting the alternative "country_id" and country name columns:
+
+```{python message=FALSE, warning=FALSE}
+keep_data = merged_data[['ccode', 'year', 'e_gdppc', 'imports']]
+```
+
+What is the `axis = 1` line of code about? This is simply denoting that we are deleting a column rather than deleting a row (`axis = 0`).
+
+```{python message=FALSE, warning=FALSE}
+drop_data = merged_data.drop(
+  ['country_id', 'country'], 
+  axis = 1
+)
+```
+
+This code works well for keeping/dropping columns. However, how would we do something similar for filtering rows? Below, we are creating a new data set that only includes wealthier (e_gdppc >= 10) democracies (v2x_regime > 1):
+
+```{python message=FALSE, warning=FALSE}
+rich_democs = merged_data[
+  (merged_data["v2x_regime"] > 1) & 
+  (merged_data["e_gdppc"] >= 10)
+]
+```
+
+We could also reverse this and create a data set of comparatively non-wealthy autocracies:
+
+```{python message=FALSE, warning=FALSE}
+poor_autocs = merged_data[
+  (merged_data["v2x_regime"] < 2) &
+  (merged_data["e_gdppc"] < 10)
+]
+```
+
+We can also use an "or" condition. Perhaps we want a data set that includes democracies and/or countries with a large amount of petroleum production:
+
+```{python message=FALSE, warning=FALSE}
+democ_or_oil = merged_data[
+  (merged_data["v2x_regime"] > 1) |
+  (merged_data["e_total_resources_income_pc"] >= 350)
+]
+```
+
+In some respects, this code is... a bit much. For example, we had to specify `merged_data` three times! By now, we might be missing dplyr heavily. Thankfully, pandas offers `query` which, as you can tell, cleans up the code quite a bit.
+
+```{python message=FALSE, warning=FALSE}
+rich_democs_2 = merged_data.query(
+  "v2x_regime > 1 & e_gdppc >= 10"
+)
+```
+
+## Duplicate Values
+
+Oftentimes, especially when merging data, we end up with duplicate values. For example, in a data set such as this, we might find that we have two unique rows for "Suriname 2007" or "Australia 1994". Duplicates are a common problem, but there is an easy way to deal with them. The following line of code shows duplicates that are present within your data set:
+
+```{python echo=TRUE, message=FALSE}
+merged_data[merged_data.duplicated(keep = False)]
+```
+
+It turns out that we do not have any duplicates in this data set (as denoted by the `Empty DataFrame` message). However, if we did, how would we go about dropping these duplicates? In the following line of code, we are going to remove rows where the country code-year pairing is the exact same across 2 or more rows:
+
+```{python message=FALSE, warning=FALSE}
+merged_data = merged_data.drop_duplicates()
+```
+
+# Renaming Data
+
+Here, we are going to simply rename a column. Note that we have already documented this syntax earlier when we renamed "ccode" to "country_code" but we are going to go through another simple example where we rename two variables in a single line of code:
+
+```{python message=FALSE, warning=FALSE, results = "hide"}
+merged_data.rename(
+  columns = {'ccode': 'country_code'}
+)
+```
+
+# Creating New Variables
+
+In my opinion, creating new variables represents the "meat" of data manipulation. In my personal research, this is the part of the data manipulation process that I end up having the most lines of code dedicated to. Below, I will provide numerous lines of code to demonstrate how to create a variety of new variables.
+
+## Creating a Dummy Variable
+
+Here, we are going to create a dummy variable for whether a country is a democracy:
+
+```{python message=FALSE, warning=FALSE}
+merged_data['democracy'] = np.where(
+  merged_data['v2x_regime'] > 1, 
+  1, 0
+)
+```
+
+Instead of using `np.where`, we could also use a custom lambda function to do the same thing:
+
+```{python message=FALSE, warning=FALSE}
+merged_data['democracy2'] = merged_data.v2x_regime.apply(
+  lambda x: 1 if x > 1 else 0
+)
+```
+
+We can actually get a bit more complex in the creation of our new variables. Here, we are going to create a dummy variable that takes a value of "1" if a country has the highest civil society score in a given year. There are many ways that we can do this, given the complexity of the variable. However, we are going to explore how to create this variable using a custom lambda function using pandas.
+
+```{python message=FALSE, warning=FALSE}
+merged_data['biggest_cso'] = (
+    merged_data
+    .groupby('year')['v2xcs_ccsi']
+    .transform(
+        lambda x: x.eq(x.max())
+    )
+    .astype(int)
+)
+```
+
+
+Alternatively, if we modify the `groupby` command to grouping by country instead of year, we can get a variable that lets us know the year(s) with the highest civil society score for each individual country:
+
+```{python message=FALSE, warning=FALSE}
+merged_data['biggest_cso2'] = (
+    merged_data
+    .groupby('ccode')['v2xcs_ccsi']
+    .transform(
+        lambda x: x.eq(x.max())
+    )
+    .astype(int)
+)
+```
+
+## Creating an Ordinal Variable
+
+Here, we are going to create an ordinal, three-unit (0-2) variable for civil society strength. Note that, before the actual creation of the new variable (the second chunk of code), we have to specify the conditions of the bin values (negative infinity to 0.33, 0.34 to 0.66, and 0.67 to positive infinity) and the corresponding bin values themselves (0, 1, and 2). After specifying this, we can properly create the new ordinal variable.
+
+```{python message=FALSE, warning=FALSE}
+bin_cond = [-np.inf, 0.33, 0.66, np.inf]
+bin_values = [0, 1, 2]
+
+merged_data["ordered_cso"] = pd.cut(
+  merged_data["v2xcs_ccsi"], 
+  bins = bin_cond, 
+  labels = bin_values
+)
+```
+
+## Creating a Categorical Variable
+
+Now, we are going to create categorical variables that serve as a numeric value to reflect a country's region. However, these numbers are not ordinal (a value of "2" (South America) is not greater than a value of "1" (North America) since this makes no sense). Regardless, `pd.cut` will be helpful here since different regions are clustered together numerically through the Correlates of War's coding scheme
+
+```{python message=FALSE, warning=FALSE}
+bin_cond = [-np.inf, 99, 199, 399, 599, 699, 899, np.inf]
+bin_values = [1, 2, 3, 4, 5, 6, 7]
+# 1 = North America
+# 2 = South America
+# 3 = Europe
+# 4 = Sub-Saharan Africa
+# 5 = Middle East and North Africa
+# 6 = Asia
+# 7 = Oceania
+
+merged_data["region"] = pd.cut(
+  merged_data["ccode"],
+  bins = bin_cond,
+  labels = bin_values
+)
+```
+
+## Creating a Log-Transformed Variable
+
+Oftentimes, the distribution of a variable is highly right-skewed, clearly departing from a normal distribution that we naturally assume most of our variables have. In the social sciences, the one of the most infamous right-skewed variable is GDP per capita. Typical treatment of this variable includes a log-transformation of the variable so that it can be appropriately used in statistical models. Still, GDP per capita is not the only variable that is treated this way. Because of this, it is good to know how to log-transform a variable in Python. I am also going to add +1 to each value prior to the log-transformation. While this variable in particular does not need this, I have personally come across many right-skewed variables that had values of 0. Adding +1 to the column is not perfect, however, it does make a log-transformation of initially "0" values nonsensical since a log-transformation of "1" is simply "0". The consequences of not treating your "0" observations while instituting a log-transformation manifest as post-log-transformation values that do not make any sense:
+
+```{python message=FALSE, warning=FALSE}
+merged_data['lgdp_pc'] = np.log(
+  merged_data['e_gdppc'] + 1
+)
+```
+
+## Creating a Lagged and Lead Variable
+
+In some cases, when preparing our data for statistical modeling, we may have theoretical reasons to believe that the relationship between our dependent variable and independent variable(s) is not instantaneous. In some cases, we may expect that our dependent variable in the present can be explained by things that happened in the past (this is a lagged effect). In other words, we also might say that the effect of our independent variables will not be present until sometime in the future. For example, we might have a reason to believe that the effect of a new community healthcare program will take time to impact community health. This would be an example of a lagged effect. We also might have reasons to believe that our dependent variable in the future is reactive to our independent variables in the present (lead effect). For example, if we are trying to explain what motivates U.S. foreign aid, we have to understand that U.S. foreign aid allocation is reactive to events that have happened in the past. Below, code is presented that demonstrates how one can generate a lagged and lead variable by one time period. If one wishes to modify the size of the lagged/lead effect, one simply changes `shift(1)` to `shift(3)`, `shift(5)`, etc. Note that we are grouping by country so that the lagged and lead effects are generated within countries. Otherwise, countries may be accidentally receiving the lagged/lead values of other countries:
+
+```{python message=FALSE, warning=FALSE}
+merged_data['lag_democ'] = merged_data.groupby(
+  ['country_code'])['democracy'].shift(1)
+```
+
+If we wish to create a lead instead, we simply apply "-1" within the parentheses:
+
+```{python message=FALSE, warning=FALSE}
+merged_data['lead_democ'] = merged_data.groupby(
+  ['ccode'])['democracy'].shift(-1)
+```
+
+## Creating a Count Variable
+
+Depending on what our project is, we may want a variable that serves as a count of some sort. For example, maybe we would like a count of the years that a country has been in this data set. To do this, I can execute the following:
+
+```{python message=FALSE, warning=FALSE}
+merged_data['year_count'] = merged_data.groupby(
+  'ccode')['year'].rank(
+    method = "first", 
+    ascending = True)
+```
+
+Alternatively, we may want this variable to simply serve as a summary as the total years a country spent in my data set:
+
+```{python message=FALSE, warning=FALSE}
+merged_data['total_years'] = merged_data.groupby(
+  ['ccode'])['year_count'].transform(max)
+```
+
+# Sorting Data
+
+An important aspect of data management is keeping a data set clean and orderly. The following code below will demonstrate how to arrange columns and rows in pursuit of this data management ideal.
+
+## Arranging Columns
+
+Here, we are re-arranging the columns in the data set so that the “country” variable shows up first at the far-left-hand side, “ccode” is after that, “year” is after that, etc. Note that this will only include columns that are explicitly listed.
+
+```{python message=FALSE, warning=FALSE}
+merged_data = merged_data[["country", "ccode", "year", "democracy", "imports", "exports"]]
+```
+
+## Arranging Rows
+
+Here, I am specifying that I would like for my data to be sorted by country and by year. Because I am using “ccode” as my country identifier and due to the fact that, unless specified otherwise, `sort_values` will sort in ascending order, the first observations listed in this newly formatted data set are the United States (with the smallest ccode of “2”) in the late 1800s (the earliest years that the US is recorded in this data set).
+
+```{python message=FALSE, warning=FALSE}
+merged_data = merged_data.sort_values(by = ['ccode', 'year'])
+```
+
+```{python message=FALSE, warning=FALSE}
+merged_data = merged_data.sort_values(by = [
+  'ccode', 'year'], 
+  ascending = False
+)
+```
