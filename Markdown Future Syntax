@@ -13,6 +13,7 @@ Resume (Link Resume)
 **Data Sets Used**: Uppsala Conflict Data Program (UCDP) sources, Mullenbach Peacekeeping Operations data, Varieties of Democracy (V-Dem), Social Conflict in Africa (SCAD), Drazanova Ethnic Fractionalization data. <br> 
 **Program Used**: Stata <br>
 **Results**: The complete construction of a conflict recurrence data set aggregated at the country-year level. In addition, common covariates of civil war recurrence are included, containing information both about the *prior* civil war and about the *current* post-war environment. <br>
+[**Documentation**](https://github.com/Brian-Lookabaugh/Conflict-Recurrence-Dataset-Construction-Chapter1-Dissertation/blob/main/Paper1_DoFile.do)
 
 ## [Project 2: Explaining Why Non-Governmental Organizations Turn to the "Dark Side"](Link Project)
 **Objective** <br>
