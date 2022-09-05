@@ -15,7 +15,7 @@ brianlookabaughjr@gmail.com <br>
 [**Documentation**](https://github.com/Brian-Lookabaugh/Conflict-Recurrence-Dataset-Construction-Chapter1-Dissertation/blob/main/Paper1_DoFile.do)
 
 ## Helpful Data Science Materials
-[Guide to Data Manipulation in R](https://www.github.com/Brian-Lookabaugh/Portfolio-Website/blob/main/DataManipulation-R.html) <br>
+[Guide to Data Manipulation in R](https://htmlpreview.github.io/?https://github.com/Brian-Lookabaugh/Portfolio-Website/blob/main/DataManipulation-R.html) <br>
 [Guide to Data Visualization in R](https://htmlpreview.github.io/?https://github.com/Brian-Lookabaugh/Portfolio-Website/blob/main/DataVisualization-R.html) <br>
 
 [Guide to Data Manipulation in Python](https://htmlpreview.github.io/?https://github.com/Brian-Lookabaugh/Portfolio-Website/blob/main/DataManipulation-Python.html) <br>
