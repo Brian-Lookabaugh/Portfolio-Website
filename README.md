@@ -20,4 +20,6 @@ brianlookabaughjr@gmail.com <br>
 
 [Guide to Data Manipulation in Python](https://htmlpreview.github.io/?https://github.com/Brian-Lookabaugh/Portfolio-Website/blob/main/DataManipulation-Python.html) <br>
 
+[Learning SQL From R](https://htmlpreview.github.io/?https://github.com/Brian-Lookabaugh/Portfolio-Website/blob/main/SQLtoR.html)
+
 [What Does a Data Scientist Do?](https://htmlpreview.github.io/?https://github.com/Brian-Lookabaugh/Portfolio-Website/blob/main/WhatDoesADataScientistDo.html)
