@@ -1,0 +1,47 @@
+# Brian Lookabaugh
+
+## About Me
+![unnamed4](https://user-images.githubusercontent.com/109555700/181593061-5670eb01-c992-48e2-ba4d-768f9b98416b.jpg) <br>
+My name is Brian Lookabaugh and I have a passion for uncovering patterns and learning new things. In 2018, I was first introduced to the fact that modern advancements in data collection and statistical analyses allowed researchers to robustly examine and predict virtually *anything*. Finding out that researchers had the capacity to predict when civil wars would occur, examine what factors lead to quality democracy, evaluate development policies in developing countries and more opened up an exciting career avenue for me. In part, this fascinating realization drove my desire to work on a PhD and write a dissertation. Currently, I am in the final phase of my PhD program and I spend my work hours writing my dissertation, working on independent projects and picking up/honing data-related skills. In particular, my current research focuses on applying causal analysis techniques and machine learning to assess the impact of peacebuilding efforts and to predict conflict relapse, respectivley. This website details examples from my work. My hope with this website is that the provision of these resources both demonstrate my skill set in data analysis while also aiding others who may be working on similar projects and happen to find themselves on this website. <br>
+
+brianlookabaughjr@gmail.com <br>
+[LinkedIn](https://www.linkedin.com/in/brian-lookabaugh-372ab31a1/) <br>
+[Resume](https://github.com/Brian-Lookabaugh/Portfolio-Website/blob/main/Lookabaugh-Resume-10-25.pdf) --Updated Resume--
+
+## [Project 1: Building a Conflict Recurrence Data Set](https://htmlpreview.github.io/?https://github.com/Brian-Lookabaugh/Portfolio-Website/blob/main/BuildingConflictRecurrenceDataset.html) <br>
+**Objective**: The goal of this project was to construct a national-level conflict recurrence data set. This was a particular challenge given that contemporary civil war data sets are aggregated at a sub-national level (warring party dyads). Further, information concerning prior civil wars is also needed while *only including* post-conflict observations. To study conflict recurrence, a data set is needed that transforms the format of contemporary civil war data sets. <br> 
+**Program Used**: Stata <br>
+**Results**: The complete construction of a conflict recurrence data set aggregated at the country-year level. In addition, common covariates of civil war recurrence are included, containing information both about the *prior* civil war and about the *current* post-war environment. <br>
+[**Documentation**](https://github.com/Brian-Lookabaugh/Building-A-Conflict-Recurrence-Dataset/blob/main/Paper1_DoFile.do)
+
+## [Project 2: Civil Society Activity and Conflict Recurrence]() <br>
+**Objective**: --Write Objective-- <br>
+**Programs Used**: --Write Programs Used-- <br>
+**Results**: --Write Results-- <br>
+[**Documentation**]()
+
+## [Project 3: Synthetic Control Methods for Analyzing the Impact of X for Post-Conflict Peace in Z]() <br>
+**Objective**: --Write Objective-- <br>
+**Programs Used**: --Write Programs Used-- <br>
+**Results**: --Write Results-- <br>
+[**Documentation**]()
+
+## [Project 4: Predicting Civil War Recurrence With Machine Learning]() <br>
+**Objective**: --Write Objective-- <br>
+**Programs Used**: --Write Programs Used-- <br>
+**Results**: --Write Results-- <br>
+[**Documentation**]()
+
+## Data Science Topics
+[How to Create an Orderly and Effective Research Project]() <br>
+
+[Learning and Executing SQL from R]() <br>
+[Easy Data Manipulation in R with dplyr, pandas, and polars]() <br>
+
+[A Comprehensive Guide to Data Visualization in R]() <br>
+[Streamlining the EDA Process in R]() <br>
+
+[Correlation, Causation, and Prediction: Introduction and Application of Three Research Approaches]() <br>
+[Comparing and Applying Bayesian and Frequentist Inference]() <br>
+[Ditching Robust Standard Errors for Multilevel Modeling]() <br>
+[The Panel Data Analyst's Guide to Time Series Analysis]()
