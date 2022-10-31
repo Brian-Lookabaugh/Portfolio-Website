@@ -14,7 +14,7 @@ brianlookabaughjr@gmail.com <br>
 **Results**: The complete construction of a conflict recurrence data set aggregated at the country-year level. In addition, common covariates of civil war recurrence are included, containing information both about the *prior* civil war and about the *current* post-war environment. <br>
 [**Documentation**](https://github.com/Brian-Lookabaugh/Building-A-Conflict-Recurrence-Dataset/blob/main/Paper1_DoFile.do)
 
-## Helpful Data Science Materials
+## Data Science Topics
 [Guide to Data Manipulation in R](https://htmlpreview.github.io/?https://github.com/Brian-Lookabaugh/Portfolio-Website/blob/main/DataManipulation-R.html) <br>
 [Guide to Data Visualization in R](https://htmlpreview.github.io/?https://github.com/Brian-Lookabaugh/Portfolio-Website/blob/main/DataVisualization-R.html) <br>
 
