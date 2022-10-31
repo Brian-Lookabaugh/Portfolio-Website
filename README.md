@@ -12,7 +12,7 @@ brianlookabaughjr@gmail.com <br>
 **Objective**: The goal of this project was to construct a national-level conflict recurrence data set. This was a particular challenge given that contemporary civil war data sets are aggregated at a sub-national level (warring party dyads). Further, information concerning prior civil wars is also needed while *only including* post-conflict observations. To study conflict recurrence, a data set is needed that transforms the format of contemporary civil war data sets. <br> 
 **Program Used**: Stata <br>
 **Results**: The complete construction of a conflict recurrence data set aggregated at the country-year level. In addition, common covariates of civil war recurrence are included, containing information both about the *prior* civil war and about the *current* post-war environment. <br>
-[**Documentation**](https://github.com/Brian-Lookabaugh/Conflict-Recurrence-Dataset-Construction-Chapter1-Dissertation/blob/main/Paper1_DoFile.do)
+[**Documentation**](https://github.com/Brian-Lookabaugh/Building-A-Conflict-Recurrence-Dataset/blob/main/Paper1_DoFile.do)
 
 ## Helpful Data Science Materials
 [Guide to Data Manipulation in R](https://htmlpreview.github.io/?https://github.com/Brian-Lookabaugh/Portfolio-Website/blob/main/DataManipulation-R.html) <br>
